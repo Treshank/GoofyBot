@@ -1,5 +1,5 @@
 # GoofyBot
 A NodeJs discord bot.
 
-This bot was initally built for the purposes of learning.. but now...
+This bot was initally built for sake of learning.. but now...
 
