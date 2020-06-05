@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 require('dotenv').config()
 const user = require('./user')
 const admin = require('./admin')
-const package = require('./package.json')
 const constants = require('./constants')
 const client = new Discord.Client();
 
@@ -28,8 +27,19 @@ client.on('message', message => {
             message.reply("Umm.. You aren't an admin..\nUsers.. :unamused: Typical of them..")
         }
     }
-    else {
-        mem = message.mentions.members.first()
+    else if(message.mentions.has(client.user))
+    {
+        let mess = message.content.toLowerCase()
+        let mes = mess.split(' ')
+        mes.forEach(m => {
+            if (m === 'thanks' || m === 'thank'|| m === 'danke' || m === 'gracias' || m === 'merci'){
+                message.reply("Anytime")
+            }
+            else if(m === 'nice'){
+                message.reply('IKRR!!')
+            }
+        })
+
     }
 });
 
